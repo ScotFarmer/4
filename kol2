@@ -1,0 +1,14 @@
+const int potPin = A0;
+const int minVal = 0;
+const int maxVal = 255;
+
+void setup() {
+    Serial.begin(9600);
+}
+
+void loop() {
+    int sensorVal = analogRead(potPin);
+    int mappedVal = map(sensorVal, 0, 1023, minVal, maxVal);
+    Serial.println(mappedVal);
+    delay(100);
+}
